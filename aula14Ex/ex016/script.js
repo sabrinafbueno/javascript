@@ -8,10 +8,14 @@ function contar () {
         res.innerHTML = 'Impossível contar!'
         window.alert('[ERRO] Faltam dados!')  
     } else {
-        res.innerHTML = 'Contando: '
+        res.innerHTML = 'Contando: <br>'
         var i = Number(ini.value)
         var f = Number(fim.value)
         var p = Number(passo.value)
+        if (p <= 0) {
+            window.alert("Passo inválido! Considerando PASSO 1")
+            p = 1
+        }
         if (i < f) {
             for (var c = i; c <= f; c+= p) {
             res.innerHTML += `${c} \u{1f449}`
